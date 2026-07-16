@@ -1837,15 +1837,10 @@
                     Si tu empresa quiere sumarse como distribuidor, proveedor o aliado estratégico, cuéntanos y te contactamos.
                 </p>
             </div>
-            <!--
-                FORMSPREE — FORMULARIO DE ALIADOS
-                1) Crea una cuenta gratis en https://formspree.io
-                2) Crea un formulario nuevo con destino: info@proflash.com.pa
-                3) Copia el endpoint que te da Formspree (formato: https://formspree.io/f/XXXXXXXX)
-                4) Reemplaza "TU_ENDPOINT_ALIADOS_AQUI" en el atributo action de abajo
-            -->
+            <!-- FORMSPREE — Endpoint compartido. Destino: info@proflash.com.pa -->
             <form class="form-grid reveal" id="partnerForm" style="max-width: 900px; margin: 0 auto;"
-                  action="https://formspree.io/f/TU_ENDPOINT_ALIADOS_AQUI" method="POST">
+                  action="https://formspree.io/f/xvzekowe" method="POST">
+                <input type="hidden" name="_subject" value="Nueva solicitud de aliado comercial - ProFlash Capital">
                 <div class="form-group">
                     <label for="pEmpresa">Empresa <span class="required">*</span></label>
                     <input type="text" id="pEmpresa" name="empresa" required>
@@ -1883,7 +1878,7 @@
                 <div class="form-full">
                     <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Enviar solicitud de aliado</button>
                     <div class="form-message" id="partnerMessage">
-                        Gracias, hemos recibido tu solicitud. Nuestro equipo te contactará pronto.
+                        ¡Gracias! Tu solicitud fue enviada, te contactaremos pronto.
                     </div>
                 </div>
             </form>
@@ -1899,15 +1894,10 @@
                 <p class="section-subtitle">Escríbenos y te acompañamos en el siguiente paso.</p>
             </div>
             <div class="contact-grid">
-                <!--
-                    FORMSPREE — FORMULARIO DE CONTACTO
-                    1) Crea una cuenta gratis en https://formspree.io
-                    2) Crea un formulario nuevo con destino: info@proflash.com.pa
-                    3) Copia el endpoint que te da Formspree (formato: https://formspree.io/f/XXXXXXXX)
-                    4) Reemplaza "TU_ENDPOINT_CONTACTO_AQUI" en el atributo action de abajo
-                -->
+                <!-- FORMSPREE — Endpoint compartido. Destino: info@proflash.com.pa -->
                 <form class="form-grid reveal" id="contactForm"
-                      action="https://formspree.io/f/TU_ENDPOINT_CONTACTO_AQUI" method="POST">
+                      action="https://formspree.io/f/xvzekowe" method="POST">
+                    <input type="hidden" name="_subject" value="Nueva consulta de contacto - ProFlash Capital">
                     <div class="form-group">
                         <label for="cNombre">Nombre <span class="required">*</span></label>
                         <input type="text" id="cNombre" name="nombre" required>
@@ -1959,7 +1949,7 @@
                     <div class="form-full">
                         <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Enviar mensaje</button>
                         <div class="form-message" id="contactMessage">
-                            Gracias por escribirnos. Te contactaremos en las próximas horas hábiles.
+                            ¡Gracias! Tu solicitud fue enviada, te contactaremos pronto.
                         </div>
                     </div>
                 </form>
