@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ProFlash Capital: ecosistema de marcas que ofrecen productos a cuotas accesibles. Movilidad, tecnología y energía para avanzar. MotoFlash, Flash Mobil y Paneles Flash.">
+    <meta name="keywords" content="ProFlash Capital, MotoFlash, Flash Mobil, Paneles Flash, productos a cuotas, motocicletas, celulares, paneles solares">
+    <meta name="author" content="ProFlash Capital">
+    <meta property="og:title" content="ProFlash Capital - Productos que te ayudan a avanzar">
+    <meta property="og:description" content="Una compañía. Múltiples marcas. Más oportunidades.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#14141A">
+    <title>ProFlash Capital - Productos que te ayudan a avanzar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo-proflash.png">
+    <link rel="apple-touch-icon" href="logo-proflash.png">
+    <meta property="og:image" content="logo-proflash.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --carbon: #14141A;
+            --carbon-deep: #0B0B0F;
+            --carbon-light: #1C1C22;
+            --carbon-card: #22222A;
+            --flash-yellow: #F5B300;
+            --flash-yellow-bright: #FFC81F;
+            --flash-yellow-dim: #D99C00;
+            --white: #FFFFFF;
+            --gray: #A0A0A8;
+            --gray-dim: #6C6C74;
+            --border: rgba(255, 255, 255, 0.08);
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.45);
+            --shadow-glow: 0 12px 40px rgba(245, 179, 0, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--carbon);
+            background-image:
+                radial-gradient(circle at 20% 0%, rgba(245, 179, 0, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 80% 100%, rgba(245, 179, 0, 0.04) 0%, transparent 45%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.06 0 0 0 0 0.08 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== NAV ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: transparent;
+            border-bottom: 1px solid transparent;
+            transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(14, 14, 16, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom-color: var(--border);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 56px;
+            max-width: 1720px;
+            margin: 0 auto;
+            gap: 32px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 52px;
+            flex: 1;
+        }
+
+        .logo,
+        .logo:hover,
+        .logo:focus,
+        .logo:active {
+            display: inline-flex;
+            align-items: center;
+            background: none !important;
+            background-color: transparent !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            margin: 0;
+            box-shadow: none !important;
+            outline: 0 !important;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 88px;
+            width: auto;
+            display: block;
+            flex-shrink: 0;
+            background: none;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            box-shadow: none;
+            outline: 0;
+            object-fit: contain;
+            transition: transform 0.25s ease;
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.04);
+        }
+
+        .footer-brand .logo-img {
+            height: 96px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            font-size: 14.5px;
+            font-weight: 500;
+            color: var(--white);
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--flash-yellow);
+            transition: width 0.25s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--flash-yellow);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 14.5px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--flash-yellow);
+            color: var(--carbon);
+        }
+
+        .btn-primary:hover {
+            background: var(--flash-yellow-dim);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--flash-yellow);
+            color: var(--flash-yellow);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 15.5px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: transparent;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            padding: 0 0 60px;
+            overflow: hidden;
+            background: var(--carbon);
+        }
+
+        .hero-visual {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1672 / 941;
+            min-height: 620px;
+            max-height: 92vh;
+            isolation: isolate;
+        }
+
+        .hero-visual > .container {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 50px;
+            z-index: 2;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.4s ease-in-out;
+        }
+
+        .hero-slide.is-active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg,
+                    rgba(8, 8, 11, 0.92) 0%,
+                    rgba(8, 8, 11, 0.82) 25%,
+                    rgba(8, 8, 11, 0.55) 55%,
+                    rgba(8, 8, 11, 0.35) 100%),
+                linear-gradient(180deg,
+                    rgba(8, 8, 11, 0.35) 0%,
+                    transparent 20%,
+                    transparent 75%,
+                    rgba(8, 8, 11, 0.55) 100%);
+        }
+
+        .hero-stage {
+            position: relative;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .hero-stats-wrap {
+            margin-top: 60px;
+        }
+
+        .hero-media {
+            display: none;
+        }
+
+        .hero-media-icon,
+        .hero-media-badge,
+        .hero-media-caption {
+            display: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 580px;
+            margin: 0;
+            text-align: left;
+        }
+
+        .hero-buttons {
+            justify-content: flex-start;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(245, 179, 0, 0.1);
+            border: 1px solid rgba(245, 179, 0, 0.28);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--flash-yellow);
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 5.4vw, 66px);
+            margin-bottom: 24px;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 .highlight {
+            color: var(--flash-yellow);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(16px, 1.5vw, 19px);
+            color: var(--gray);
+            margin-bottom: 36px;
+            max-width: 480px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            position: relative;
+            z-index: 3;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--flash-yellow);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13.5px;
+            color: var(--gray);
+        }
+
+        /* ===== SECTION BASE ===== */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 60px;
+        }
+
+        .section-eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--flash-yellow);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4.5vw, 46px);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--gray);
+        }
+
+        /* ===== NOSOTROS ===== */
+        .about {
+            background: var(--carbon-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 24px;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            font-size: 16.5px;
+            margin-bottom: 18px;
+        }
+
+        .about-highlight {
+            padding: 20px 24px;
+            background: rgba(255, 212, 0, 0.06);
+            border-left: 3px solid var(--flash-yellow);
+            border-radius: 8px;
+            margin-top: 28px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 500;
+            color: var(--white);
+            font-size: 17px;
+        }
+
+        .about-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .about-tile {
+            aspect-ratio: 3 / 4;
+            background:
+                radial-gradient(ellipse 220px 300px at 82% 12%, rgba(245, 179, 0, 0.18), transparent 60%),
+                radial-gradient(ellipse 220px 280px at 18% 88%, rgba(245, 179, 0, 0.1), transparent 60%),
+                linear-gradient(160deg, #1c1c24 0%, #101014 55%, #06060a 100%);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 34px 22px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .about-tile::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400' fill='none'%3E%3Cpath d='M270 40 L200 130 L235 130 L215 200 L275 105 L240 105 L270 40 Z' fill='rgba(245,179,0,0.35)' opacity='0.6'/%3E%3Cpath d='M40 320 L20 360 L38 360 L28 400 L60 350 L42 350 L48 320 Z' fill='rgba(245,179,0,0.25)' opacity='0.5'/%3E%3Cline x1='290' y1='0' x2='240' y2='60' stroke='rgba(245,179,0,0.3)' stroke-width='2'/%3E%3Cline x1='280' y1='0' x2='210' y2='70' stroke='rgba(245,179,0,0.2)' stroke-width='1.5'/%3E%3Cline x1='0' y1='250' x2='50' y2='300' stroke='rgba(245,179,0,0.15)' stroke-width='1.5'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.9;
+        }
+
+        .about-tile > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-tile:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 179, 0, 0.4);
+        }
+
+        .about-tile:nth-child(2), .about-tile:nth-child(3) {
+            transform: translateY(24px);
+        }
+
+        .about-tile:nth-child(2):hover, .about-tile:nth-child(3):hover {
+            transform: translateY(20px);
+        }
+
+        .about-tile-icon {
+            width: 76px;
+            height: 76px;
+            border-radius: 20px;
+            background: linear-gradient(160deg, rgba(245, 179, 0, 0.22), rgba(245, 179, 0, 0.08));
+            border: 1px solid rgba(245, 179, 0, 0.4);
+            box-shadow: 0 8px 24px rgba(245, 179, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--flash-yellow);
+            margin-top: 12px;
+        }
+
+        .about-tile-icon svg {
+            width: 34px;
+            height: 34px;
+        }
+
+        .about-tile h4 {
+            font-size: 20px;
+            line-height: 1.25;
+            color: var(--white);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .about-tile h4 .accent {
+            display: block;
+            color: var(--flash-yellow);
+            margin-top: 2px;
+        }
+
+        /* ===== MARCAS ===== */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .brand-card {
+            background: var(--carbon-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 0;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--flash-yellow);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s ease;
+            z-index: 3;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(245, 179, 0, 0.35);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .brand-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .brand-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 280px;
+            margin: 0;
+            background: #050507;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 32px;
+        }
+
+        .brand-logo {
+            height: 100%;
+            width: auto;
+            max-width: 90%;
+            max-height: 220px;
+            object-fit: contain;
+            display: block;
+            background: none;
+            border: 0;
+            padding: 0;
+        }
+
+        .brand-body {
+            padding: 36px 40px 40px;
+        }
+
+        .brand-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .brand-card h3 .brand-highlight {
+            color: var(--flash-yellow);
+        }
+
+        .brand-card p {
+            color: var(--gray);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .brand-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: var(--flash-yellow);
+            font-weight: 500;
+        }
+
+        .brand-tag svg {
+            transition: transform 0.25s ease;
+        }
+
+        .brand-card:hover .brand-tag svg {
+            transform: translateX(4px);
+        }
+
+        .brand-card.coming-soon {
+            background: transparent;
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 260px;
+        }
+
+        .brand-card.coming-soon:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 212, 0, 0.35);
+        }
+
+        .brand-card.coming-soon::before {
+            display: none;
+        }
+
+        .coming-soon-badge {
+            padding: 6px 14px;
+            background: rgba(255, 212, 0, 0.12);
+            color: var(--flash-yellow);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .brand-card.coming-soon h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .brand-card.coming-soon p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        /* ===== CÓMO FUNCIONA ===== */
+        .how {
+            background: var(--carbon-light);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1120px;
+            margin: 0 auto;
+            counter-reset: step-counter;
+        }
+
+        .step {
+            background: linear-gradient(160deg, #1e1e26 0%, #14141a 60%, #0a0a0e 100%);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px 32px 34px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.35s ease;
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--flash-yellow) 50%, transparent 100%);
+            opacity: 0.6;
+            transition: opacity 0.35s ease;
+        }
+
+        .step::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 160px;
+            height: 160px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M13 2 L4 14 L12 14 L11 22 L20 10 L12 10 L13 2 Z' fill='rgba(245,179,0,0.18)'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: rotate(15deg);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            pointer-events: none;
+        }
+
+        .step:hover {
+            border-color: rgba(245, 179, 0, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(245, 179, 0, 0.15);
+        }
+
+        .step:hover::before {
+            opacity: 1;
+        }
+
+        .step:hover::after {
+            transform: rotate(20deg) scale(1.08);
+        }
+
+        .step > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--flash-yellow);
+            line-height: 1;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            text-shadow: 0 0 30px rgba(245, 179, 0, 0.35);
+        }
+
+
+        .step h4 {
+            font-size: 19px;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .step p {
+            color: var(--gray);
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .flash-word {
+            display: inline-block;
+            color: var(--flash-yellow);
+            font-weight: 700;
+            font-style: italic;
+            font-size: 1.12em;
+            letter-spacing: -0.02em;
+            padding: 0 0.08em;
+            position: relative;
+            text-shadow: 0 0 30px rgba(245, 179, 0, 0.4);
+            transform: skew(-6deg);
+        }
+
+        .flash-word::before {
+            content: '';
+            position: absolute;
+            left: -0.15em;
+            top: 50%;
+            transform: translateY(-50%) skew(6deg);
+            width: 0.9em;
+            height: 0.9em;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M13 2 L4 14 L12 14 L11 22 L20 10 L12 10 L13 2 Z' fill='%23F5B300'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 10px rgba(245, 179, 0, 0.6));
+            display: none;
+        }
+
+        .how-note {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: var(--gray-dim);
+        }
+
+        /* ===== POR QUÉ ===== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .why-card {
+            padding: 32px 28px;
+            background: linear-gradient(160deg, #1e1e26 0%, #14141a 60%, #0a0a0e 100%);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--flash-yellow) 50%, transparent 100%);
+            opacity: 0.55;
+            transition: opacity 0.35s ease;
+        }
+
+        .why-card::after {
+            content: '';
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            width: 130px;
+            height: 130px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M13 2 L4 14 L12 14 L11 22 L20 10 L12 10 L13 2 Z' fill='rgba(245,179,0,0.14)'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: rotate(18deg);
+            pointer-events: none;
+            transition: transform 0.35s ease;
+        }
+
+        .why-card:hover {
+            border-color: rgba(245, 179, 0, 0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(245, 179, 0, 0.15);
+        }
+
+        .why-card:hover::before {
+            opacity: 1;
+        }
+
+        .why-card:hover::after {
+            transform: rotate(24deg) scale(1.08);
+        }
+
+        .why-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: linear-gradient(160deg, rgba(245, 179, 0, 0.22), rgba(245, 179, 0, 0.08));
+            border: 1px solid rgba(245, 179, 0, 0.35);
+            box-shadow: 0 6px 18px rgba(245, 179, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--flash-yellow);
+            margin-bottom: 22px;
+        }
+
+        .why-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .why-card p {
+            color: var(--gray);
+            font-size: 14.5px;
+            line-height: 1.55;
+        }
+
+        /* ===== PROPÓSITO ===== */
+        .purpose {
+            background: linear-gradient(135deg, var(--carbon-light) 0%, var(--carbon) 100%);
+            text-align: center;
+        }
+
+        .purpose-content {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            position: relative;
+        }
+
+        .purpose-quote {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(28px, 4.5vw, 44px);
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 28px;
+        }
+
+        .purpose-quote span {
+            color: var(--flash-yellow);
+        }
+
+        .purpose-text {
+            font-size: 17px;
+            color: var(--gray);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* ===== FORMULARIOS ===== */
+        .partners {
+            background: var(--carbon-light);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .form-full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .form-group label .required {
+            color: var(--flash-yellow);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 14px 16px;
+            background: var(--carbon-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            transition: all 0.25s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--flash-yellow);
+            background: rgba(255, 212, 0, 0.04);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 4L6 8L10 4' stroke='%23F5B300' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 44px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 13.5px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 1.5px solid var(--gray-dim);
+            border-radius: 4px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-group input[type="checkbox"]:checked {
+            background: var(--flash-yellow);
+            border-color: var(--flash-yellow);
+        }
+
+        .checkbox-group input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 5px;
+            width: 5px;
+            height: 9px;
+            border: solid var(--carbon);
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .checkbox-group a {
+            color: var(--flash-yellow);
+            text-decoration: underline;
+        }
+
+        .form-message {
+            padding: 14px 18px;
+            background: rgba(255, 212, 0, 0.12);
+            border: 1px solid rgba(255, 212, 0, 0.35);
+            border-radius: 10px;
+            color: var(--flash-yellow);
+            font-size: 14.5px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .form-message.show {
+            display: block;
+            animation: slideDown 0.35s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== CONTACTO ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+            background: var(--carbon-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-info-item:hover {
+            border-color: rgba(255, 212, 0, 0.35);
+        }
+
+        .contact-info-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(255, 212, 0, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--flash-yellow);
+            flex-shrink: 0;
+        }
+
+        .contact-info-content h5 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .contact-info-content p,
+        .contact-info-content a {
+            color: var(--gray);
+            font-size: 14.5px;
+        }
+
+        .contact-info-content a:hover {
+            color: var(--flash-yellow);
+        }
+
+        .whatsapp-cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 22px 26px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            border-radius: 14px;
+            color: var(--white);
+            transition: transform 0.25s ease;
+        }
+
+        .whatsapp-cta:hover {
+            transform: translateY(-2px);
+            color: var(--white);
+        }
+
+        .whatsapp-cta-text h5 {
+            font-size: 16px;
+            margin-bottom: 2px;
+            color: var(--white);
+        }
+
+        .whatsapp-cta-text p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            background: var(--carbon-light);
+        }
+
+        .faq-list {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--carbon-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item.active {
+            border-color: rgba(255, 212, 0, 0.35);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 22px 26px;
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16.5px;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: color 0.2s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--flash-yellow);
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            color: var(--flash-yellow);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            padding: 0 26px;
+            color: var(--gray);
+            font-size: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 400px;
+            padding: 0 26px 24px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #08080A;
+            padding: 80px 0 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr repeat(3, 1fr);
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            color: var(--gray);
+            font-size: 14.5px;
+            margin-top: 18px;
+            max-width: 320px;
+        }
+
+        .footer-col h5 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--flash-yellow);
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col a {
+            color: var(--gray);
+            font-size: 14.5px;
+        }
+
+        .footer-col a:hover {
+            color: var(--flash-yellow);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: var(--carbon-card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.25s ease;
+        }
+
+        .footer-socials a:hover {
+            background: var(--flash-yellow);
+            color: var(--carbon);
+            border-color: var(--flash-yellow);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--gray-dim);
+            font-size: 13.5px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: transform 0.25s ease;
+            animation: pulse 2.5s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: var(--white);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 8px 32px rgba(37, 211, 102, 0.7); }
+        }
+
+        /* ===== REVEAL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .nav-menu {
+                position: fixed;
+                top: 88px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: var(--carbon);
+                border-top: 1px solid var(--border);
+                padding: 20px 24px 30px;
+                transform: translateY(-120%);
+                transition: transform 0.35s ease;
+                max-height: calc(100vh - 88px);
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+
+            .nav-menu li {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 16px 0;
+                font-size: 16px;
+            }
+
+            .nav-cta-desktop {
+                display: none;
+            }
+
+            .nav-menu .nav-cta-mobile {
+                margin-top: 20px;
+                display: block;
+            }
+
+            .nav-menu .nav-cta-mobile .btn {
+                width: 100%;
+                padding: 14px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .about-grid,
+            .contact-grid,
+            .brands-grid,
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .steps {
+                max-width: 520px;
+            }
+
+            .brands-grid {
+                max-width: 520px;
+            }
+
+            .brand-icon {
+                height: 220px;
+                padding: 24px;
+            }
+
+            .brand-logo {
+                max-height: 170px;
+            }
+
+            .brand-body {
+                padding: 28px 28px 32px;
+            }
+
+            .hero-stage {
+                min-height: 520px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-overlay {
+                background:
+                    linear-gradient(180deg,
+                        rgba(8, 8, 11, 0.85) 0%,
+                        rgba(8, 8, 11, 0.7) 45%,
+                        rgba(8, 8, 11, 0.55) 100%);
+            }
+
+            .nav-left {
+                gap: 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .hero {
+                padding: 96px 0 50px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .nav .logo-img {
+                height: 56px;
+            }
+            .nav-inner {
+                padding: 16px 20px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-visual {
+                display: none;
+            }
+
+            .whatsapp-cta {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .whatsapp-float {
+                width: 54px;
+                height: 54px;
+                bottom: 18px;
+                right: 18px;
+            }
+        }
+
+        .nav-cta-mobile {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <div class="nav-left">
+                <a href="#inicio" class="logo" aria-label="ProFlash Capital">
+                    <img src="logo-transparent.png" alt="ProFlash Capital" class="logo-img">
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#marcas">Marcas</a></li>
+                    <li><a href="#como">Cómo funciona</a></li>
+                    <li><a href="#aliados">Aliados</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li class="nav-cta-mobile"><a href="#contacto" class="btn btn-primary">Solicitar ahora</a></li>
+                </ul>
+            </div>
+            <a href="#contacto" class="btn btn-primary nav-cta-desktop">Solicitar ahora</a>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-visual">
+            <div class="hero-slideshow" id="heroSlideshow" aria-hidden="true">
+                <div class="hero-slide is-active" style="background-image: url('images/hero1.png?v=3');"></div>
+                <div class="hero-slide" style="background-image: url('images/hero2.png?v=2');"></div>
+                <div class="hero-slide" style="background-image: url('images/hero3.png?v=2');"></div>
+                <div class="hero-slide" style="background-image: url('images/hero4.png?v=2');"></div>
+            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="container">
+                <div class="hero-stage">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14H12L11 22L20 10H12L13 2Z" fill="currentColor"/></svg>
+                            Una compañía. Múltiples marcas. Más oportunidades.
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="#marcas" class="btn btn-primary btn-large">Conoce nuestras marcas</a>
+                            <a href="#contacto" class="btn btn-secondary btn-large">Solicita información</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container hero-stats-wrap">
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">3+</div>
+                    <div class="stat-label">Marcas especializadas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Cuotas accesibles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Atención cercana</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">+</div>
+                    <div class="stat-label">Nuevas marcas en camino</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <span class="section-eyebrow">Nosotros</span>
+                    <h2>Un ecosistema creado para generar oportunidades.</h2>
+                    <p>
+                        ProFlash Capital es la empresa matriz que desarrolla y administra marcas especializadas
+                        en la venta de productos útiles a cuotas accesibles.
+                    </p>
+                    <p>
+                        No somos una financiera tradicional. Somos una compañía que combina experiencia comercial,
+                        tecnología y cercanía para acercar productos que mejoran la vida de las personas.
+                    </p>
+                    <div class="about-highlight">
+                        Cada necesidad tiene una solución Flash.
+                    </div>
+                </div>
+                <div class="about-visual reveal">
+                    <div class="about-tile">
+                        <div class="about-tile-icon">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h4>Holding <span class="accent">de marcas</span></h4>
+                    </div>
+                    <div class="about-tile">
+                        <div class="about-tile-icon">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14H12L11 22L20 10H12L13 2Z" fill="currentColor"/></svg>
+                        </div>
+                        <h4>Cuotas <span class="accent">accesibles</span></h4>
+                    </div>
+                    <div class="about-tile">
+                        <div class="about-tile-icon">
+                            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h4>Procesos <span class="accent">claros</span></h4>
+                    </div>
+                    <div class="about-tile">
+                        <div class="about-tile-icon">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M20 21V19C20 16.79 18.21 15 16 15H8C5.79 15 4 16.79 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
+                        </div>
+                        <h4>Atención <span class="accent">cercana</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARCAS -->
+    <section id="marcas">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Nuestras marcas</span>
+                <h2 class="section-title">Especializadas en lo que necesitas.</h2>
+                <p class="section-subtitle">
+                    Cada marca ProFlash está diseñada para resolver una necesidad concreta con productos de calidad y cuotas pensadas para ti.
+                </p>
+            </div>
+            <div class="brands-grid">
+                <article class="brand-card reveal">
+                    <div class="brand-icon">
+                        <img src="motoflash-outline.png" alt="MotoFlash" class="brand-logo">
+                    </div>
+                    <div class="brand-body">
+                        <h3><span class="brand-highlight">Moto</span>Flash</h3>
+                        <p>Motocicletas a cuotas para movilidad, trabajo y generación de ingresos. Llegas caminando y sales manejando.</p>
+                        <a href="#contacto" class="brand-tag">
+                            Conoce MotoFlash
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="brand-card reveal">
+                    <div class="brand-icon">
+                        <img src="flashmobil-t.png" alt="Flash Mobil" class="brand-logo">
+                    </div>
+                    <div class="brand-body">
+                        <h3><span class="brand-highlight">Flash</span> Mobil</h3>
+                        <p>Celulares y tecnología con planes de pago accesibles. Para comunicarte, trabajar, vender y estudiar.</p>
+                        <a href="#contacto" class="brand-tag">
+                            Conoce Flash Mobil
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="how" id="como">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Cómo funciona</span>
+                <h2 class="section-title">Un proceso simple y <span class="flash-word">Flash</span>.</h2>
+                <p class="section-subtitle">Tu producto en solo 3 pasos. Rápido, simple y sin complicaciones.</p>
+            </div>
+            <div class="steps">
+                <div class="step reveal">
+                    <div class="step-number">1</div>
+                    <h4>⚡ Elige tu producto</h4>
+                    <p>Explora nuestras marcas y encuentra la opción ideal para ti.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-number">2</div>
+                    <h4>📝 Completa tu solicitud</h4>
+                    <p>Llena el formulario en minutos desde tu celular.</p>
+                </div>
+                <div class="step reveal">
+                    <div class="step-number">3</div>
+                    <h4>🚀 Recíbelo el mismo día</h4>
+                    <p>Una vez aprobado, coordinamos la entrega de inmediato.</p>
+                </div>
+            </div>
+            <p class="how-note">* Cada solicitud está sujeta a evaluación. No garantizamos aprobación automática.</p>
+        </div>
+    </section>
+
+    <!-- POR QUÉ -->
+    <section id="por-que">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Por qué ProFlash</span>
+                <h2 class="section-title">Motivos para elegir nuestro ecosistema.</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14H12L11 22L20 10H12L13 2Z" fill="currentColor"/></svg>
+                    </div>
+                    <h4>Procesos rápidos</h4>
+                    <p>Solicitudes ágiles, evaluación clara y comunicación directa. Sin trámites eternos.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 1V23M17 5H9.5C7.567 5 6 6.567 6 8.5C6 10.433 7.567 12 9.5 12H14.5C16.433 12 18 13.567 18 15.5C18 17.433 16.433 19 14.5 19H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h4>Cuotas accesibles</h4>
+                    <p>Planes de pago pensados para que puedas acceder a lo que necesitas sin comprometer tu bolsillo.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h4>Marcas especializadas</h4>
+                    <p>Cada marca del grupo está enfocada en su categoría, con experiencia y productos seleccionados.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7118 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.6056 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h4>Atención cercana</h4>
+                    <p>Personas reales acompañándote antes, durante y después de tu compra. Nunca hablas con un bot frío.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.6417 1.5487 7.04096 1.5487 8.5C1.5487 9.95904 2.1283 11.3583 3.16 12.39L12 21.23L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6053C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39466C21.7563 5.72721 21.351 5.12085 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h4>Productos útiles</h4>
+                    <p>No vendemos lujo, vendemos herramientas: movilidad, conectividad y energía para tu día a día.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/><path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h4>Plataforma confiable</h4>
+                    <p>Un respaldo corporativo sólido detrás de cada marca. Transparencia en todos los procesos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPÓSITO -->
+    <section class="purpose">
+        <div class="purpose-content reveal">
+            <span class="section-eyebrow">Nuestro propósito</span>
+            <p class="purpose-quote">No ofrecemos únicamente productos. <span>Creamos oportunidades.</span></p>
+            <p class="purpose-text">
+                Creemos que el acceso a las herramientas correctas puede transformar la vida de una persona.
+                Por eso trabajamos para que la movilidad, la tecnología y la energía dejen de ser un lujo
+                y se conviertan en un impulso real para quienes buscan avanzar.
+            </p>
+        </div>
+    </section>
+
+    <!-- ALIADOS -->
+    <section class="partners" id="aliados">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Aliados comerciales</span>
+                <h2 class="section-title">Crece con el ecosistema Flash.</h2>
+                <p class="section-subtitle">
+                    Si tu empresa quiere sumarse como distribuidor, proveedor o aliado estratégico, cuéntanos y te contactamos.
+                </p>
+            </div>
+            <form class="form-grid reveal" id="partnerForm" style="max-width: 900px; margin: 0 auto;">
+                <div class="form-group">
+                    <label for="pEmpresa">Empresa <span class="required">*</span></label>
+                    <input type="text" id="pEmpresa" name="empresa" required>
+                </div>
+                <div class="form-group">
+                    <label for="pContacto">Nombre de contacto <span class="required">*</span></label>
+                    <input type="text" id="pContacto" name="contacto" required>
+                </div>
+                <div class="form-group">
+                    <label for="pTelefono">Teléfono <span class="required">*</span></label>
+                    <input type="tel" id="pTelefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="pCorreo">Correo <span class="required">*</span></label>
+                    <input type="email" id="pCorreo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="pTipo">Tipo de producto <span class="required">*</span></label>
+                    <select id="pTipo" name="tipo" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="motocicletas">Motocicletas</option>
+                        <option value="tecnologia">Tecnología / Celulares</option>
+                        <option value="energia">Energía solar</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pCiudad">Ciudad <span class="required">*</span></label>
+                    <input type="text" id="pCiudad" name="ciudad" required>
+                </div>
+                <div class="form-group form-full">
+                    <label for="pMensaje">Mensaje</label>
+                    <textarea id="pMensaje" name="mensaje" placeholder="Cuéntanos sobre tu empresa y cómo podríamos colaborar."></textarea>
+                </div>
+                <div class="form-full">
+                    <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Enviar solicitud de aliado</button>
+                    <div class="form-message" id="partnerMessage">
+                        Gracias, hemos recibido tu solicitud. Nuestro equipo te contactará pronto.
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Contacto</span>
+                <h2 class="section-title">Hablemos.</h2>
+                <p class="section-subtitle">Escríbenos y te acompañamos en el siguiente paso.</p>
+            </div>
+            <div class="contact-grid">
+                <form class="form-grid reveal" id="contactForm">
+                    <div class="form-group">
+                        <label for="cNombre">Nombre <span class="required">*</span></label>
+                        <input type="text" id="cNombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cApellido">Apellido <span class="required">*</span></label>
+                        <input type="text" id="cApellido" name="apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cTelefono">Teléfono <span class="required">*</span></label>
+                        <input type="tel" id="cTelefono" name="telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cCorreo">Correo <span class="required">*</span></label>
+                        <input type="email" id="cCorreo" name="correo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cMarca">Marca de interés <span class="required">*</span></label>
+                        <select id="cMarca" name="marca" required>
+                            <option value="">Selecciona una marca</option>
+                            <option value="motoflash">MotoFlash</option>
+                            <option value="flash-mobil">Flash Mobil</option>
+                            <option value="paneles-flash">Paneles Flash</option>
+                            <option value="general">Consulta general</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cConsulta">Tipo de consulta <span class="required">*</span></label>
+                        <select id="cConsulta" name="consulta" required>
+                            <option value="">Selecciona</option>
+                            <option value="info">Información de producto</option>
+                            <option value="cuotas">Consulta sobre cuotas</option>
+                            <option value="post-venta">Postventa</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-full">
+                        <label for="cMensaje">Mensaje <span class="required">*</span></label>
+                        <textarea id="cMensaje" name="mensaje" required placeholder="Cuéntanos qué necesitas."></textarea>
+                    </div>
+                    <div class="form-full">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="cAuth" name="auth" required>
+                            <label for="cAuth">
+                                Autorizo el tratamiento de mis datos personales conforme a la <a href="#privacidad">Política de Privacidad</a> de ProFlash Capital.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-full">
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Enviar mensaje</button>
+                        <div class="form-message" id="contactMessage">
+                            Gracias por escribirnos. Te contactaremos en las próximas horas hábiles.
+                        </div>
+                    </div>
+                </form>
+
+                <aside class="contact-info reveal">
+                    <a href="https://wa.me/50000000000?text=Hola%20ProFlash%20Capital,%20quiero%20más%20información" class="whatsapp-cta" target="_blank" rel="noopener">
+                        <div class="whatsapp-cta-text">
+                            <h5>Chatea por WhatsApp</h5>
+                            <p>Respuesta rápida en horario hábil</p>
+                        </div>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </a>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92V19.92C22 20.4704 21.7893 20.9996 21.4142 21.3746C21.0391 21.7497 20.5098 21.9605 19.9593 21.96C16.5426 21.7292 13.2589 20.6969 10.3593 18.94C7.66084 17.3396 5.36044 15.0392 3.75931 12.34C1.99628 9.42704 0.96368 6.12604 0.739269 2.69001C0.738719 2.14118 0.948456 1.6136 1.32157 1.23854C1.69468 0.863488 2.22004 0.65177 2.76893 0.65001H5.76893C6.75184 0.640083 7.59103 1.35801 7.72893 2.32001C7.86259 3.2001 8.10659 4.0623 8.45893 4.89001C8.72579 5.5348 8.60193 6.28204 8.13893 6.79001L6.86893 8.06001C8.35279 10.6799 10.5203 12.8474 13.1403 14.331L14.4103 13.061C14.9182 12.598 15.6655 12.4741 16.3103 12.741C17.138 13.0934 18.0002 13.3374 18.8803 13.471C19.8524 13.6098 20.5764 14.4626 20.5603 15.451" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Teléfono</h5>
+                            <a href="tel:+50000000000">+500 000 0000</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Correo</h5>
+                            <a href="mailto:contacto@proflashcapital.com">contacto@proflashcapital.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Dirección</h5>
+                            <p>Oficinas centrales ProFlash Capital</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="contact-info-content">
+                            <h5>Horarios</h5>
+                            <p>Lunes a Viernes: 8:00 - 18:00<br>Sábados: 9:00 - 13:00</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Preguntas frecuentes</span>
+                <h2 class="section-title">Resolvemos tus dudas.</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        ¿Qué es ProFlash Capital?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        ProFlash Capital es una empresa matriz (holding) que desarrolla y administra marcas especializadas
+                        en la venta de productos a cuotas accesibles. No es una financiera tradicional, sino un ecosistema
+                        de marcas enfocado en generar oportunidades para las personas.
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        ¿Cuáles son las marcas del grupo?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        Actualmente contamos con MotoFlash (motocicletas), Flash Mobil (celulares y tecnología) y
+                        Paneles Flash (energía solar). Muy pronto sumaremos nuevas marcas al ecosistema.
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        ¿Cómo solicito un producto?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        Puedes iniciar tu solicitud desde el formulario de contacto, escribiéndonos por WhatsApp o
+                        acercándote a una de nuestras oficinas. Un asesor te acompañará en cada paso.
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        ¿La aprobación es garantizada?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        No. Cada solicitud pasa por una evaluación responsable para asegurar que las cuotas se ajusten a
+                        tu perfil. Nuestro objetivo es que tu compra sea sostenible en el tiempo.
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        ¿Cómo funcionan las cuotas?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        Ofrecemos planes de pago accesibles con distintos plazos según el producto y la marca. Un asesor te
+                        detallará las condiciones específicas al momento de tu solicitud.
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        ¿Cómo me sumo como aliado comercial?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        Completa el formulario en la sección "Aliados comerciales" con los datos de tu empresa. Nuestro
+                        equipo de alianzas se pondrá en contacto para conversar sobre las oportunidades disponibles.
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        ¿Qué diferencia a ProFlash de una financiera?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        No prestamos dinero. Comercializamos productos útiles con planes de pago accesibles, a través de
+                        nuestras marcas especializadas. El foco siempre está en el producto y en la persona que lo necesita.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#inicio" class="logo" aria-label="ProFlash Capital">
+                        <img src="logo-transparent.png" alt="ProFlash Capital" class="logo-img">
+                    </a>
+                    <p>Una compañía. Múltiples marcas. Más oportunidades. Cada necesidad tiene una solución Flash.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80977 15.3801 9.21484 14.7852C8.61991 14.1902 8.22773 13.4229 8.09406 12.5922C7.9604 11.7615 8.09206 10.9099 8.47032 10.1584C8.84858 9.40685 9.45418 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87656 12.63 8C13.4789 8.12588 14.2648 8.52146 14.8717 9.12831C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 12C7.34315 12 6 13.3431 6 15C6 16.6569 7.34315 18 9 18C10.6569 18 12 16.6569 12 15V3C12.5 4.5 14 7 17 7V10C15 10 13.5 9 12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Explorar</h5>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#marcas">Marcas</a></li>
+                        <li><a href="#como">Cómo funciona</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Marcas</h5>
+                    <ul>
+                        <li><a href="#marcas">MotoFlash</a></li>
+                        <li><a href="#marcas">Flash Mobil</a></li>
+                        <li><a href="#marcas">Paneles Flash</a></li>
+                        <li><a href="#marcas">Próximamente</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Contacto</h5>
+                    <ul>
+                        <li><a href="mailto:contacto@proflashcapital.com">contacto@proflashcapital.com</a></li>
+                        <li><a href="tel:+50000000000">+500 000 0000</a></li>
+                        <li><a href="#aliados">Aliados comerciales</a></li>
+                        <li><a href="#contacto">Solicitar información</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 ProFlash Capital. Todos los derechos reservados.</span>
+                <div class="footer-legal">
+                    <a href="#privacidad">Política de Privacidad</a>
+                    <a href="#cookies">Cookies</a>
+                    <a href="#terminos">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/50000000000?text=Hola%20ProFlash%20Capital,%20quiero%20más%20información" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chatea por WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        // Menú hamburguesa
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en enlace
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // FAQ acordeón
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Formularios
+        function handleForm(formId, messageId) {
+            const form = document.getElementById(formId);
+            const message = document.getElementById(messageId);
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                message.classList.add('show');
+                form.reset();
+
+                setTimeout(() => {
+                    message.classList.remove('show');
+                }, 6000);
+
+                message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        }
+
+        handleForm('partnerForm', 'partnerMessage');
+        handleForm('contactForm', 'contactMessage');
+
+        // Reveal animations con IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Carrusel de fotos del hero: crossfade cada 5s
+        (function initHeroSlideshow() {
+            const slides = document.querySelectorAll('#heroSlideshow .hero-slide');
+            if (slides.length < 2) return;
+            let index = 0;
+            setInterval(() => {
+                slides[index].classList.remove('is-active');
+                index = (index + 1) % slides.length;
+                slides[index].classList.add('is-active');
+            }, 5000);
+        })();
+
+        // Nav: transparente sobre el hero, sólido al hacer scroll
+        const nav = document.getElementById('mainNav');
+        const toggleNavScrolled = () => {
+            if (window.scrollY > 60) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+        toggleNavScrolled();
+        window.addEventListener('scroll', toggleNavScrolled, { passive: true });
+    </script>
+</body>
+</html>
