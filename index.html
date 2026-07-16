@@ -2218,12 +2218,13 @@
         });
 
         // Formularios — envío vía Formspree a info@proflash.com.pa
-        // El endpoint de cada formulario se define en el atributo `action` del <form>.
-        // Si aún no has pegado tu endpoint real de Formspree, el envío mostrará un aviso de error.
+        // Se envía como JSON con Accept + Content-Type: application/json para
+        // que Formspree responda en JSON en lugar de redirigir a una página HTML
+        // (que rompería el fetch por CORS aun cuando el correo se entregue).
         function handleForm(formId, messageId) {
             const form = document.getElementById(formId);
             const message = document.getElementById(messageId);
-            const successText = message.textContent.trim();
+            const successText = '¡Gracias! Tu solicitud fue enviada, te contactaremos pronto.';
             const errorText = 'Ocurrió un problema al enviar. Intenta de nuevo o escríbenos a info@proflash.com.pa';
 
             form.addEventListener('submit', async (e) => {
@@ -2236,35 +2237,48 @@
                     submitBtn.textContent = 'Enviando...';
                 }
 
+                const data = Object.fromEntries(new FormData(form).entries());
+
+                let ok = false;
                 try {
                     const response = await fetch(form.action, {
                         method: 'POST',
-                        body: new FormData(form),
-                        headers: { 'Accept': 'application/json' }
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        }
                     });
 
-                    if (response.ok) {
-                        message.textContent = successText;
-                        message.classList.remove('error');
-                        message.classList.add('show');
-                        form.reset();
-                    } else {
-                        message.textContent = errorText;
-                        message.classList.add('show', 'error');
+                    ok = response.ok;
+                    if (!ok) {
+                        try {
+                            const body = await response.json();
+                            if (body && body.ok === true) ok = true;
+                        } catch (_) { /* body no era JSON, seguimos con ok=false */ }
                     }
                 } catch (err) {
+                    ok = false;
+                }
+
+                if (ok) {
+                    message.textContent = successText;
+                    message.classList.remove('error');
+                    message.classList.add('show');
+                    form.reset();
+                } else {
                     message.textContent = errorText;
                     message.classList.add('show', 'error');
-                } finally {
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalBtnText;
-                    }
-                    message.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    setTimeout(() => {
-                        message.classList.remove('show');
-                    }, 6000);
                 }
+
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                }
+                message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => {
+                    message.classList.remove('show');
+                }, 6000);
             });
         }
 
