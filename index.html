@@ -672,6 +672,17 @@
             font-weight: 500;
         }
 
+        .brand-card--linked {
+            cursor: pointer;
+        }
+
+        .brand-card--linked .brand-tag::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+        }
+
         .brand-tag svg {
             transition: transform 0.25s ease;
         }
@@ -1762,7 +1773,7 @@
                 </p>
             </div>
             <div class="brands-grid">
-                <article class="brand-card reveal">
+                <article class="brand-card brand-card--linked reveal">
                     <div class="brand-icon">
                         <img src="motoflash-outline.png" alt="MotoFlash" class="brand-logo">
                     </div>
